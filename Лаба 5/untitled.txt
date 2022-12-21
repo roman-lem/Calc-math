@@ -1,0 +1,8 @@
+def trape_R(xk, fk):
+  res = 0
+  for i in range(len(xk)-1):
+    res += (fk[i+1] + fk[i])/2*(xk[i+1] - xk[i])
+  res2h=0
+  for i in range(0, len(xk)-1, 2):
+    res2h += (fk[i+2] + fk[i])/2*(xk[i+2] - xk[i])
+  return res + (res - res2h)/3
